@@ -1,0 +1,32 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+//defaultTasks 'clean', 'test'
+
+// JDK 8
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	testCompile 'org.seleniumhq.selenium.grid:selenium-grid-hub:1.0.5'
+	testCompile 'org.seleniumhq.selenium:selenium-java:2.53.1'
+    testCompile 'org.testng:testng:6.9.10'
+}
+
+test {
+    //we want display the following test events
+    testLogging {
+        events "PASSED", "STARTED", "FAILED", "SKIPPED"
+    }
+    
+	//to use TestNG to run tests
+   useTestNG()
+     {
+
+ 	 suiteXmlFiles << new File(rootDir, "testng.xml")
+ 	}
+ 	
+ }
