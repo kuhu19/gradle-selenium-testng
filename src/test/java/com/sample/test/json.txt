@@ -1,0 +1,4 @@
+--JSON is 
+	1)JavaScript Object Notation
+	2)syntax for storing and exchanging data
+	3)easier to use alternative to XML
